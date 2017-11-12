@@ -30,6 +30,15 @@ export class RegisterComponent implements OnInit {
     Validators.required
   ]);
 
+  address = new FormControl('', [
+    Validators.required
+  ]);
+
+
+  key = new FormControl('', [
+    Validators.required
+  ]);
+
   constructor(private formBuilder: FormBuilder,
               private router: Router,
               public toast: ToastComponent,
@@ -40,8 +49,11 @@ export class RegisterComponent implements OnInit {
       username: this.username,
       email: this.email,
       password: this.password,
-      role: this.role
+      role: this.role,
+      address: this.address,
+      key: this.key
     });
+    this.setNewAddress();
   }
 
   setClassUsername() {
@@ -52,6 +64,15 @@ export class RegisterComponent implements OnInit {
   }
   setClassPassword() {
     return { 'has-danger': !this.password.pristine && !this.password.valid };
+  }
+  setNewAddress() {
+    this.userService.getNewAddress().subscribe(
+      data => {this.address = data.address;
+        this.key = data.key;
+        this.registerForm.patchValue({'key': this.key});
+        this.registerForm.patchValue({'address': this.address}); },
+      error => console.log(error)
+    );
   }
 
   register() {

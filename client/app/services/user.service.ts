@@ -40,6 +40,13 @@ export class UserService {
     return this.http.put(`/api/user/${user._id}`, JSON.stringify(user), this.options);
   }
 
+  getNewAddress(): Observable<any> {
+    return this.http.get('/api/users/address').map(res => res.json());
+  }
+  getBalance(address): Observable<any> {
+    return this.http.get(`/api/users/balance/${address}`).map(res => res.json());
+  }
+
   deleteUser(user): Observable<any> {
     return this.http.delete(`/api/user/${user._id}`, this.options);
   }
