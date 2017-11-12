@@ -21,7 +21,7 @@
         "lint": "ng lint",
         "lintbe": "tslint server/**/**.ts{,x}",
         "e2e": "ng e2e",
-        "postinstall": "ng build -aot -prod"
+        "postinstall": "ng build -aot -prod && tsc -p"
     },
     "private": true,
     "dependencies": {
@@ -53,6 +53,7 @@
         "morgan": "^1.9.0",
         "rxjs": "^5.4.2",
         "tether": "1.4.0",
+        "typescript": "~2.3.3",
         "zone.js": "^0.8.14"
     },
     "devDependencies": {
