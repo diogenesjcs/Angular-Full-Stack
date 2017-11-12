@@ -21,11 +21,11 @@
         "lint": "ng lint",
         "lintbe": "tslint server/**/**.ts{,x}",
         "e2e": "ng e2e",
-        "preinstall": "npm install -g @angular/compiler-cli",
         "postinstall": "ng build -aot -prod"
     },
     "private": true,
     "dependencies": {
+        "@angular/cli": "1.4.7",
         "@angular/common": "^4.2.4",
         "@angular/compiler": "^4.2.4",
         "@angular/compiler-cli": "^4.2.4",
