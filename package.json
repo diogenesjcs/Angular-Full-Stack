@@ -22,7 +22,7 @@
         "lint": "ng lint",
         "lintbe": "tslint server/**/**.ts{,x}",
         "e2e": "ng e2e",
-        "postinstall": "ng build -aot -prod && tsc -p"
+        "postinstall": "ng build -aot -prod && tsc"
     },
     "private": true,
     "dependencies": {
