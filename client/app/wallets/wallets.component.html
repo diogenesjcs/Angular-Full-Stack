@@ -24,7 +24,7 @@
     </div>
 </div>
 
-<div class="card" *ngIf="!isEditing">
+<div class="card">
     <h4 class="card-header">New transaction</h4>
     <div class="card-block">
         <form class="form-inline" [formGroup]="newTransactionForm" (ngSubmit)="newTransaction()" style="text-align:center">
